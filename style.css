@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #4f8ef7;
+    --secondary-color: #38d9f5;
+    --bg-color: #0d1117;
+    --surface-color: #161b27;
+    --card-color: #1e2535;
+    --text-color: #e2e8f0;
+    --text-muted: #8b9ab3;
+    --white: #ffffff;
+    --accent-glow: rgba(79, 142, 247, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(79, 142, 247, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(56, 217, 245, 0.05) 0%, transparent 50%);
+}
+
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    width: 88%;
+    max-width: 1100px;
+    min-height: 82vh;
+    background: var(--card-color);
+    padding: 50px 60px;
+    border-radius: 20px;
+    border: 1px solid rgba(79, 142, 247, 0.2);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 80px rgba(79, 142, 247, 0.06);
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(56, 217, 245, 0.25);
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    color: var(--secondary-color);
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+ul li {
+    margin-bottom: 4px;
+}
+
+ul li strong {
+    color: var(--secondary-color);
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.speaker-tag {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.two-columns {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.col {
+    flex: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+.justificativa {
+    background: rgba(79, 142, 247, 0.08);
+    padding: 16px 20px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 10px 10px 0;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.justificativa strong {
+    color: var(--primary-color);
+}
+
+.controls {
+    position: absolute;
+    bottom: 28px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    z-index: 100;
+}
+
+button {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid rgba(79, 142, 247, 0.4);
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+button:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(79, 142, 247, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.4s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+.slide-counter {
+    position: absolute;
+    bottom: 34px;
+    right: 40px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
