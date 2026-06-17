@@ -7,7 +7,6 @@
     --text-color: #e2e8f0;
     --text-muted: #8b9ab3;
     --white: #ffffff;
-    --accent-glow: rgba(79, 142, 247, 0.15);
 }
 
 * {
@@ -100,13 +99,8 @@ ul {
     color: var(--text-color);
 }
 
-ul li {
-    margin-bottom: 4px;
-}
-
-ul li strong {
-    color: var(--secondary-color);
-}
+ul li { margin-bottom: 4px; }
+ul li strong { color: var(--secondary-color); }
 
 .highlight {
     font-weight: 700;
@@ -152,8 +146,45 @@ ul li strong {
     color: var(--text-color);
 }
 
-.justificativa strong {
-    color: var(--primary-color);
+.justificativa strong { color: var(--primary-color); }
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+th, td {
+    padding: 11px 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+th {
+    background: rgba(79, 142, 247, 0.25);
+    color: var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    font-size: 0.95rem;
+}
+
+tr:hover td {
+    background: rgba(255,255,255,0.02);
+}
+
+.winner {
+    color: #4ade80;
+    font-weight: 700;
+}
+
+.total-row td {
+    background: rgba(79, 142, 247, 0.2);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-top: 1px solid rgba(79, 142, 247, 0.5);
 }
 
 .controls {
@@ -186,9 +217,7 @@ button:hover {
     box-shadow: 0 4px 20px rgba(79, 142, 247, 0.35);
 }
 
-button:active {
-    transform: translateY(0);
-}
+button:active { transform: translateY(0); }
 
 .progress {
     position: absolute;
