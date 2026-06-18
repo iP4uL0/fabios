@@ -237,3 +237,136 @@ button:active { transform: translateY(0); }
     color: var(--text-muted);
     letter-spacing: 1px;
 }
+
+/* =====================
+   RESPONSIVIDADE
+   ===================== */
+
+/* Tablet (768px – 1024px) */
+@media (max-width: 1024px) {
+    .slide {
+        width: 92%;
+        padding: 40px 44px;
+        min-height: 84vh;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.45rem; }
+    p  { font-size: 1.05rem; }
+    ul { font-size: 0.98rem; }
+
+    table { font-size: 0.92rem; }
+    th, td { padding: 9px 10px; }
+
+    .slide-counter { right: 24px; }
+}
+
+/* Mobile grande (480px – 768px) */
+@media (max-width: 768px) {
+    body { overflow-y: auto; }
+
+    .slider-container {
+        height: auto;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding: 16px 0 90px;
+    }
+
+    .slide {
+        position: relative;
+        width: 94%;
+        min-height: unset;
+        padding: 36px 24px 28px;
+        border-radius: 16px;
+        transform: none !important;
+        opacity: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .slide.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.25rem; margin-bottom: 14px; padding-bottom: 10px; }
+    h3 { font-size: 1.1rem; }
+    p  { font-size: 1rem; margin-bottom: 10px; }
+    ul { font-size: 0.95rem; line-height: 1.7; }
+
+    .speaker-tag {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        top: 14px;
+        right: 14px;
+    }
+
+    .two-columns {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 14px;
+    }
+
+    .col { padding: 14px 16px; }
+
+    .justificativa {
+        padding: 12px 14px;
+        font-size: 0.93rem;
+        margin-top: 14px;
+    }
+
+    /* Tabelas: scroll horizontal em mobile */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 12px;
+    }
+
+    table {
+        font-size: 0.82rem;
+        min-width: 480px;
+    }
+
+    th, td { padding: 8px 10px; }
+
+    .total-row td { font-size: 0.95rem; }
+
+    .controls {
+        bottom: 20px;
+        gap: 12px;
+    }
+
+    button {
+        padding: 9px 20px;
+        font-size: 0.88rem;
+    }
+
+    .slide-counter {
+        bottom: 26px;
+        right: 16px;
+        font-size: 0.75rem;
+    }
+
+    /* Logos no slide 1 */
+    .slide:first-child img {
+        height: 52px !important;
+    }
+}
+
+/* Mobile pequeno (< 480px) */
+@media (max-width: 480px) {
+    .slide { padding: 28px 16px 24px; border-radius: 12px; }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.1rem; }
+    p  { font-size: 0.92rem; }
+    ul { font-size: 0.88rem; }
+
+    button { padding: 8px 16px; font-size: 0.82rem; }
+
+    .slide:first-child img {
+        height: 40px !important;
+    }
+}
